@@ -8,7 +8,7 @@ import {UtilsContext} from '../../store/Utils';
 import {SearchContext} from '../../store/Search';
 import search from '../../services/search.service';
 import SearchList from './SearchList';
-import styles from './styles.scss';
+import './styles.scss';
 
 const SearchPage = () => {
   const { getQueryParam } = useContext(UtilsContext);
@@ -45,12 +45,12 @@ const SearchPage = () => {
             <SearchBar isLandingPage={false} />
             {loading
               ? (
-                <div className={styles.loading}>
+                <div className= 'loading'>
                   <Spinner style={{ width: '3rem', height: '3rem' }} />
                 </div>
               )
               : (
-                <div className={styles.movieCardContainer}>
+                <div className='movieCardContainer'>
                   <SearchList movies={movieList?.results}/>
                   <Pagination
                     itemClass="page-item"
@@ -68,7 +68,7 @@ const SearchPage = () => {
           <>
             <Header />
             <SearchBar isLandingPage={false} />
-            <div className={styles.noContent}>
+            <div className='noContent'>
               There are no movies that matched your query.
             </div>
           </>

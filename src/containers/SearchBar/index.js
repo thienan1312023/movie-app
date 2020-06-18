@@ -3,7 +3,7 @@ import SearchBar from '../../components/SearchBar';
 
 function SearchBarContainer() {
     return (
-        <SearchBar />
+        <SearchBar isLandingPage/>
     );
 }
 export default SearchBarContainer;

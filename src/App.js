@@ -16,19 +16,16 @@ function App() {
     <Router>
       <Switch>
         <UtilsProvider>
-          <Route
-            path="/movie/:id"
-            children={<MovieDetail />}
-          />
+          <Route path="/movie/:id">
+            <MovieDetail />
+          </Route>
           <SearchProvider>
-            <Route
-              path="/search"
-              render={() => <SearchPage />}
-            />
-            <Route
-              path="/"
-              render={() => <Home />}
-            />
+            <Route path="/search">
+              <SearchPage />
+            </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
           </SearchProvider>
         </UtilsProvider>
 

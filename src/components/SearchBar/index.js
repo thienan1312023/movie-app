@@ -3,7 +3,7 @@ import { Input } from 'reactstrap';
 import { Link, useHistory } from 'react-router-dom';
 
 import {UtilsContext} from '../../store/Utils';
-import styles from './styles.scss';
+import './styles.scss';
 
 // eslint-disable-next-line react/prop-types
 const SearchBar = ({ isLandingPage }) => {
@@ -20,16 +20,16 @@ const SearchBar = ({ isLandingPage }) => {
   };
 
   return (
-    <div className={isLandingPage ? styles.searchContainerMain : styles.searchContainer}>
+    <div className={isLandingPage ? 'searchContainerMain' : 'searchContainer'}>
       <Input
         placeholder="Search for a movie, tv show, person......"
-        className={styles.searchInput}
+        className='searchInput'
         bsSize="lg"
         onChange={(e) => { setSearchWord(e.target.value); }}
         onKeyPress={handleKeyPress}
         value={searchWord}
       />
-      <Link to={`search${queryCommand}`} className={styles.searchButton}>Search</Link>
+      <Link to={`search${queryCommand}`} className='searchButton'>Search</Link>
     </div>
   );
 };
