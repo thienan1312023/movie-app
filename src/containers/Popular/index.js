@@ -1,5 +1,5 @@
 import React from 'react';
-import Popular from '../../components/PopularList/index';
+import Popular from '../../components/Popular';
 import { PopularProvider } from '../../store/PopularList/provider';
 function PopularContainer() {
     return (

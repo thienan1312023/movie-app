@@ -1,8 +1,10 @@
 import React from 'react';
-import {replaceAll} from '../../utils/customString';
+import {replaceAll} from '../../../utils/customString';
 import './styles.scss';
 import { Link } from 'react-router-dom';
+
 const ORG_URL = 'https://image.tmdb.org/t/p/w220_and_h330_face';
+
 function PopularItem({ PopularItem }) {
     const { id, poster_path, title, release_date, vote_average } = PopularItem;
     return (
