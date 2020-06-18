@@ -1,4 +1,9 @@
-import React from 'react';
+import {SearchContext} from './context';
+import {SearchProvider} from './provider';
 
-const SearchContext = React.createContext();
-export default SearchContext;
+export {
+    SearchContext,
+    SearchProvider
+}
+
+
