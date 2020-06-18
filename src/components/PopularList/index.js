@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { PopularContext } from '../../store/PopularList/provider';
+import { PopularContext } from '../../store/PopularList';
 import { getPopularMovieList } from '../../services/PopularList.services'
 import PopularItem from './item';
 import './styles.scss';

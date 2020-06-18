@@ -4,6 +4,9 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import { UtilsProvider } from './store/Utils';
+import { SearchProvider } from './store/Search';
+import SearchPage from './pages/SearchPage';
 import Home from './pages/Home';
 import MovieDetail from './pages/MovieDetail'
 import './App.css';
@@ -12,16 +15,25 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route
-          path="/movie/:id"
-          children={<MovieDetail />}
-        />
-        <Route
-          path="/"
-          render={() => <Home />}
-        />
+        <UtilsProvider>
+          <Route
+            path="/movie/:id"
+            children={<MovieDetail />}
+          />
+          <SearchProvider>
+            <Route
+              path="/search"
+              render={() => <SearchPage />}
+            />
+            <Route
+              path="/"
+              render={() => <Home />}
+            />
+          </SearchProvider>
+        </UtilsProvider>
+
       </Switch>
-  </Router>
+    </Router>
   );
 }
 

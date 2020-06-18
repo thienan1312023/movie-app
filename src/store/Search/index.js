@@ -1,5 +1,5 @@
-import {SearchContext} from './context';
-import {SearchProvider} from './provider';
+import SearchContext from './context';
+import SearchProvider from './provider';
 
 export {
     SearchContext,

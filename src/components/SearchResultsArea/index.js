@@ -6,7 +6,7 @@ import Header from '../Header';
 import SearchBar from '../SearchBar';
 import {UtilsContext} from '../../store/Utils';
 import {SearchContext} from '../../store/Search';
-import search from '../../services/searchServices';
+import search from '../../services/search.service';
 import SearchList from './SearchList';
 import styles from './styles.scss';
 

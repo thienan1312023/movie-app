@@ -1,6 +1,6 @@
 import React, {useReducer} from 'react';
 import PopularListReducer from './reducer';
-import PopularContext from './context';
+import {PopularContext} from './context';
 
 const initState = {
   popularList: []
@@ -12,6 +12,7 @@ export const PopularProvider = ({ children }) => {
   return (
     <PopularContext.Provider value={{
       state,
+      
       dispatch,
     }}>
       {children}
