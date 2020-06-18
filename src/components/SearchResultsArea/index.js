@@ -4,10 +4,10 @@ import Pagination from 'react-js-pagination';
 import { Spinner } from 'reactstrap';
 import Header from '../Header';
 import SearchBar from '../SearchBar';
-import UtilsContext from '../../context/utilsContext';
+import {UtilsContext} from '../../store/Utils';
+import {SearchContext} from '../../store/Search';
 import search from '../../services/searchServices';
-import SearchContext from '../../context/searchContext';
-import SearchList from '../SearchList';
+import SearchList from './SearchList';
 import styles from './styles.scss';
 
 const SearchPage = () => {

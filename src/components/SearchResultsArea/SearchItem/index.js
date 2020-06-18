@@ -1,7 +1,7 @@
 import React  from 'react';
 import { Link } from 'react-router-dom';
 import { Media } from 'reactstrap';
-import { replaceAll } from '../../utils/customString';
+import { replaceAll } from '../../../utils/customString';
 import styles from './styles.scss';
 
 const SearchItem = ({movie}) => {
