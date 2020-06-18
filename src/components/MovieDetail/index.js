@@ -41,7 +41,7 @@ const MovieDetail = ({ movie_id }) => {
                             <div className="movie-description__control__rate--explain">User Score</div>
                         </div>
                         <div className="movie-description__play-trailer" onClick={openMovie}>
-                            <i class="fa fa-play" aria-hidden="true"></i>
+                            <i className="fa fa-play" aria-hidden="true"></i>
                             <span>Play Trailer</span>
                         </div>
                         <div className="movie-description__tagline">{movie.tagline}</div>

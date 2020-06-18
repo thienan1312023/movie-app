@@ -27,7 +27,7 @@ const SearchBar = ({ isLandingPage }) => {
         bsSize="lg"
         onChange={(e) => { setSearchWord(e.target.value); }}
         onKeyPress={handleKeyPress}
-        value={searchWord}
+        value={searchWord || ''}
       />
       <Link to={`search${queryCommand}`} className='searchButton'>Search</Link>
     </div>
