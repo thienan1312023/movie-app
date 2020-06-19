@@ -1,5 +1,6 @@
 import {TheMovieDB, API_KEY} from './constants';
 
-export const getDetailTV = (movie_id) => {
-    return fetch(`${TheMovieDB}/movie/${movie_id}?api_key=${API_KEY}`);
+export const getDetailTV = (tv_id) => {
+    return fetch(`${TheMovieDB}/tv/${tv_id}?api_key=${API_KEY}`);
 }
+
