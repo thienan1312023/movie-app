@@ -21,6 +21,9 @@ function App() {
               <Route path="/movie/:id">
                 <MovieDetail />
               </Route>
+              <Route path="/tv/:id">
+                <MovieDetail />
+              </Route>
               <Route exact path="/">
                 <Home />
               </Route>

@@ -13,7 +13,7 @@ function PopularItem({ PopularItem }) {
 
   const { id, poster_path, name, first_air_date, vote_average } = PopularItem;
   
-  if (isMovie) {
+if (isMovie) {
     const { id, poster_path, title, release_date, vote_average } = PopularItem;
     return (
       <div className="popular-item">
@@ -33,7 +33,7 @@ function PopularItem({ PopularItem }) {
 
   return (
     <div className="popular-item">
-      <Link to={`movie/${id}-${replaceAll(name, " ", "-")}`}>
+      <Link to={`tv/${id}-${replaceAll(name, " ", "-")}`}>
         <div className="popular-item__image">
           <img src={ORG_URL + poster_path} alt="poster" />
         </div>

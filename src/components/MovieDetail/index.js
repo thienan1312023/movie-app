@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
-import { PopularContext } from "../../store/PopularList";
+import React, { useState, useEffect } from "react";
 import { MovieDetailContext } from "../../store/MovieDetail";
 import { getDetailTV } from "../../services/TVDetail.service";
 import { getDetailMovie } from "../../services/MovieDetail.service";
@@ -13,9 +12,9 @@ const MovieDetail = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [urlTrailerVideo, setUrlTrailerVideo] = useState("");
-  const {
-    typeOfVideo: { isMovie },
-  } = useContext(PopularContext);
+  console.log('location', window.location.href)
+  const hrefPaths = window.location.pathname.split('/');
+  const isMovie = hrefPaths[1] === 'movie' ? true : false;
   const {
     OpenWatchModel: { setIsOpenWatchModal },
   } = React.useContext(MovieDetailContext);
@@ -35,7 +34,7 @@ const MovieDetail = () => {
           .then((data) => setMovie(data));
 
     //Get URL TRAILER VIDIEO
-    pureIds?.length > 0 && isMovie
+    pureIds?.length > 0 && !isMovie
       ? getMovieVideo(pureIds[0])
           .then((response) => response.json())
           .then(
@@ -52,7 +51,7 @@ const MovieDetail = () => {
               data?.results.length > 0 &&
               setUrlTrailerVideo(data.results[0].key)
           );
-  }, [id, isMovie]);
+  }, [id]);
   const getYear = (date) => {
     const newDate = new Date(date);
     return newDate.getFullYear();
