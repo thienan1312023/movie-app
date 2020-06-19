@@ -20,9 +20,7 @@ function Popular() {
   const [isActiveTV, setIsActiveTV] = useState(true);
 
   useEffect(() => {
-    getPopularTVList()
-      .then((response) => response.json())
-      .then((data) => setPopularTVList(data));
+    setIsMovie(false);
   }, []);
 
   useEffect(() => {
