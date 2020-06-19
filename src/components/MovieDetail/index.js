@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { PopularContext } from "../../store/PopularList";
+import { MovieDetailContext } from "../../store/MovieDetail";
 import { getDetailTV } from "../../services/TVDetail.service";
+import { getDetailMovie } from "../../services/MovieDetail.service";
+import { getTVVideo, getMovieVideo } from "../../services/Video.service";
 import { BackdropImage, PosterAvatar } from "../../services/constants";
 import { useParams } from "react-router-dom";
 
@@ -9,24 +12,55 @@ import "./styles.scss";
 const MovieDetail = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
+  const [urlTrailerVideo, setUrlTrailerVideo] = useState("");
   const {
     typeOfVideo: { isMovie },
   } = useContext(PopularContext);
-  // const { OpenWatchModel } = React.useContext(MovieDetailContext);
-  // const { MovieWatch } = React.useContext(MovieDetailContext);
+  const {
+    OpenWatchModel: { setIsOpenWatchModal },
+  } = React.useContext(MovieDetailContext);
+  const {
+    MovieWatch: { setUrlMovieWatch },
+  } = React.useContext(MovieDetailContext);
 
   useEffect(() => {
     const pureIds = id && id.split("-");
-    pureIds?.length > 0 &&
-      getDetailTV(pureIds[0])
-        .then((response) => response.json())
-        .then((data) => setMovie(data));
-  }, [id]);
+    //Get Movie Detail
+    pureIds?.length > 0 && isMovie
+      ? getDetailMovie(pureIds[0])
+          .then((response) => response.json())
+          .then((data) => setMovie(data))
+      : getDetailTV(pureIds[0])
+          .then((response) => response.json())
+          .then((data) => setMovie(data));
+
+    //Get URL TRAILER VIDIEO
+    pureIds?.length > 0 && isMovie
+      ? getMovieVideo(pureIds[0])
+          .then((response) => response.json())
+          .then(
+            (data) =>
+              data?.results &&
+              data?.results.length > 0 &&
+              setUrlTrailerVideo(data.results[0].key)
+          )
+      : getTVVideo(pureIds[0])
+          .then((response) => response.json())
+          .then(
+            (data) =>
+              data?.results &&
+              data?.results.length > 0 &&
+              setUrlTrailerVideo(data.results[0].key)
+          );
+  }, [id, isMovie]);
   const getYear = (date) => {
     const newDate = new Date(date);
     return newDate.getFullYear();
   };
-  const openMovie = (url, title) => {};
+  const openMovie = () => {
+    setIsOpenWatchModal(true);
+    setUrlMovieWatch(urlTrailerVideo);
+  };
   if (!movie) return <></>;
   if (movie && movie.title) {
     return (

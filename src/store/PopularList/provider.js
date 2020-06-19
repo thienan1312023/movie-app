@@ -5,7 +5,7 @@ export const PopularProvider = ({ children }) => {
   
   const [popularMovieList, setPopularMovieList] = useState([]);
   const [popularTVList, setPopularTVList] = useState([]);
-  const [isMovie, setIsMovie] = useState(true);
+  const [isMovie, setIsMovie] = useState(false);
 
   const store = {
     movieList: { popularMovieList, setPopularMovieList },
