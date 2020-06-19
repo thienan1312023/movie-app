@@ -34,7 +34,7 @@ const MovieDetail = () => {
           .then((data) => setMovie(data));
 
     //Get URL TRAILER VIDIEO
-    pureIds?.length > 0 && !isMovie
+    pureIds?.length > 0 && isMovie
       ? getMovieVideo(pureIds[0])
           .then((response) => response.json())
           .then(
