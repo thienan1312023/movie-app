@@ -9,11 +9,13 @@ import PopularList from "./PopularList";
 import "./styles.scss";
 
 function Popular() {
+  console.log('popular context', React.useContext(PopularContext))
   const {
     movieList: { popularMovieList, setPopularMovieList },
     tvList: { popularTVList, setPopularTVList },
-    typeOfVideo: { setIsMovie }
+    typeOfVideo: { isMovie, setIsMovie },
   } = React.useContext(PopularContext);
+
   const [popularList, setPopularList] = useState([]);
   const [isActiveTV, setIsActiveTV] = useState(true);
 
@@ -24,18 +26,16 @@ function Popular() {
   }, []);
 
   useEffect(() => {
-    if (isActiveTV) {
-      setIsMovie(false);
+    if (!isMovie) {
       getPopularTVList()
         .then((response) => response.json())
         .then((data) => setPopularTVList(data));
     } else {
-      setIsMovie(true);
       getPopularMovieList()
         .then((response) => response.json())
         .then((data) => setPopularMovieList(data));
     }
-  }, [isActiveTV]);
+  }, [isMovie, setPopularMovieList, setPopularTVList]);
 
   useEffect(() => {
     setPopularList(popularTVList);
@@ -48,8 +48,11 @@ function Popular() {
   const onToggle = (type) => {
     if (type === "tv") {
       setIsActiveTV(true);
+      console.log('toggle');
+      setIsMovie(false);
     } else {
       setIsActiveTV(false);
+      setIsMovie(true);
     }
   };
 

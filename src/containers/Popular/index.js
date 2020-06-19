@@ -1,12 +1,6 @@
-import React from 'react';
-import Popular from '../../components/Popular';
-import { PopularProvider } from '../../store/PopularList/provider';
+import React from "react";
+import Popular from "../../components/Popular";
 function PopularContainer() {
-    return (
-        <PopularProvider>
-            <Popular />
-        </PopularProvider>
-
-    );
+  return <Popular />;
 }
 export default PopularContainer;

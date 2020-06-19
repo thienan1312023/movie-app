@@ -12,12 +12,15 @@ const ModalMovie = () => {
   return (
     <div>
       <Modal isOpen={isOpenWatchModel}>
-        <div class="embed-responsive embed-responsive-16by9">
+        <div className="embed-responsive embed-responsive-16by9">
           <iframe
             class="embed-responsive-item"
             src= {`https://www.youtube.com/embed/${urlMovieWatch}`}
             allowfullscreen
             title="Trailer"
+            frameBorder="0"
+            // eslint-disable-next-line react/jsx-no-duplicate-props
+            allowfullscreen
           ></iframe>
         </div>
       </Modal>
