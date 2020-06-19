@@ -12,9 +12,9 @@ const MovieDetail = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [urlTrailerVideo, setUrlTrailerVideo] = useState("");
-  console.log('location', window.location.href)
-  const hrefPaths = window.location.pathname.split('/');
-  const isMovie = hrefPaths[1] === 'movie' ? true : false;
+  console.log("location", window.location.href);
+  const hrefPaths = window.location.pathname.split("/");
+  const isMovie = hrefPaths[1] === "movie" ? true : false;
   const {
     OpenWatchModel: { setIsOpenWatchModal },
   } = React.useContext(MovieDetailContext);
@@ -51,7 +51,7 @@ const MovieDetail = () => {
               data?.results.length > 0 &&
               setUrlTrailerVideo(data.results[0].key)
           );
-  }, [id]);
+  }, [id, isMovie]);
   const getYear = (date) => {
     const newDate = new Date(date);
     return newDate.getFullYear();
