@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {MovieDetailContext} from './context';
 
 export const MovieDetailProvider = ({ children }) => {
-    const [isOpenWatchModel, setIsOpenWatchModal] = React.useState(false);
-    const [urlMovieWatch, setUrlMovieWatch] = React.useState('');
+    const [isOpenWatchModel, setIsOpenWatchModal] = useState(false);
+    const [urlMovieWatch, setUrlMovieWatch] = useState('');
 
     const store = {
         OpenWatchModel: { isOpenWatchModel, setIsOpenWatchModal },

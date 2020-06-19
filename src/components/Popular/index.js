@@ -9,7 +9,6 @@ import PopularList from "./PopularList";
 import "./styles.scss";
 
 function Popular() {
-  console.log('popular context', React.useContext(PopularContext))
   const {
     movieList: { popularMovieList, setPopularMovieList },
     tvList: { popularTVList, setPopularTVList },
@@ -21,7 +20,7 @@ function Popular() {
 
   useEffect(() => {
     setIsMovie(false);
-  }, []);
+  }, [setIsMovie]);
 
   useEffect(() => {
     if (!isMovie) {
