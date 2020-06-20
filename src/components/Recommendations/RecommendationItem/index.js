@@ -1,18 +1,43 @@
 import React from "react";
-import { Card, CardImg, CardBody, CardTitle } from "reactstrap";
+import { useLocation } from "react-router-dom";
+import "./styles.scss";
+
+const ORG_URL = "https://image.tmdb.org/t/p/w220_and_h330_face";
 
 function RecommendationItem({ RecommendItem }) {
-  const { original_name, poster_path } = RecommendItem;
-  return (
-    <React.Fragment>
-      <Card>
-        <CardImg top width="100%" src={poster_path} alt="Card image cap" />
-        <CardBody>
-          <CardTitle>{original_name}</CardTitle>
-        </CardBody>
-      </Card>
-    </React.Fragment>
-  );
+  const location = useLocation();
+  const hrefPaths = location && location.pathname.split("/");
+  const isMovie = !!(hrefPaths[1] === "movie");
+
+  if (isMovie) {
+    const { poster_path, title, release_date } = RecommendItem;
+    return (
+      <div className="recommend-item">
+        <div className="recommend-item__image">
+          <img src={ORG_URL + poster_path} alt="poster" />
+        </div>
+        <div className="recommend-item__content">
+          <div className="recommend-item__content__title">{title}</div>
+          <div className="recommend-item__content__release">{release_date}</div>
+        </div>
+      </div>
+    );
+  } else {
+    const { poster_path, name, first_air_date } = RecommendItem;
+    return (
+      <div className="recommend-item">
+        <div className="recommend-item__image">
+          <img src={ORG_URL + poster_path} alt="poster" />
+        </div>
+        <div className="recommend-item__content">
+          <div className="recommend-item__content__title">{name}</div>
+          <div className="recommend-item__content__release">
+            {first_air_date}
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default RecommendationItem;

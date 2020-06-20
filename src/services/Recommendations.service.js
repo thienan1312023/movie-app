@@ -5,5 +5,5 @@ export const getTVRecommendations = (tv_id) => {
 };
 
 export const getMovieRecommendations = (movie_id) => {
-  return fetch(`${TheMovieDB}/tv/${movie_id}/recommendations?api_key=${API_KEY}`);
+  return fetch(`${TheMovieDB}/movie/${movie_id}/recommendations?api_key=${API_KEY}`);
 };

@@ -1,11 +1,13 @@
 import React from "react";
 import HeaderContainer from "../../containers/Header";
-import MovieDetail from "../../containers/MovieDetail";
+import MovieDetailContainer from "../../containers/MovieDetail";
+import RecommendationsContainer from "../../containers/Recommendations";
 function Home() {
   return (
     <React.Fragment>
       <HeaderContainer />
-        <MovieDetail />
+        <MovieDetailContainer />
+        <RecommendationsContainer />
     </React.Fragment>
   );
 }
