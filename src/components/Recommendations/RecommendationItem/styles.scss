@@ -1,5 +1,6 @@
 .recommend-item {
     position: relative;
+    display: flex;
     &__rate {
         border-style: solid;
         border-color: coral;
@@ -21,6 +22,7 @@
     padding: 15px 10px 25px 10px;
     &__image > img {
         border-radius: 20px;
+        margin-right: 25px;
     }
     &__content {
         display: flex;

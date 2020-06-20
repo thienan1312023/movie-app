@@ -10,15 +10,20 @@ function RecommendationItem({ RecommendItem }) {
   const isMovie = !!(hrefPaths[1] === "movie");
 
   if (isMovie) {
-    const { poster_path, title, release_date } = RecommendItem;
+    const { poster_path, title, release_date, overview } = RecommendItem;
     return (
       <div className="recommend-item">
-        <div className="recommend-item__image">
-          <img src={ORG_URL + poster_path} alt="poster" />
+        <div className="recommend-item__main">
+          <div className="recommend-item__image">
+            <img src={ORG_URL + poster_path} alt="poster" />
+          </div>
         </div>
         <div className="recommend-item__content">
           <div className="recommend-item__content__title">{title}</div>
           <div className="recommend-item__content__release">{release_date}</div>
+          <div className="recommend-item__over">
+            <span>{overview}</span>
+          </div>
         </div>
       </div>
     );
