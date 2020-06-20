@@ -9,7 +9,14 @@ function CreditItem({ CreditItem }) {
     <div className="credit-item">
       <div className="credit-item__main">
         <div className="credit-item__image">
-          <img src={ORG_URL + profile_path} alt="poster" />
+          {profile_path ? (
+            <img src={ORG_URL + profile_path} alt="poster" />
+          ) : (
+            <img
+              src="https://cdn1.vectorstock.com/i/1000x1000/51/05/male-profile-avatar-with-brown-hair-vector-12055105.jpg"
+              alt="poster"
+            />
+          )}
         </div>
       </div>
       <div className="credit-item__content">

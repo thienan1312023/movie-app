@@ -5,8 +5,8 @@ import "./styles.scss";
 function CreditList({ CreditList }) {
   return (
     <React.Fragment>
-      <div className="Credit-list-container">
-        <div>
+      <div className="credit-list">
+        <div className="credit-list__content">
           {CreditList &&
             CreditList.length > 0 &&
             CreditList.map((item, index) => (

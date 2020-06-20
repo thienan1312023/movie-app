@@ -1,41 +1,39 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import RecommendationList from "./RecommendationList";
-import {
-  getTVRecommendations,
-  getMovieRecommendations,
-} from "../../services/Recommendations.service";
+import CreditListArea from "./CreditList";
+import { getMovieCredits, getTVCredits } from "../../services/Credit.service";
 import "./styles.scss";
-function Recommendations() {
+
+function Credit() {
   const location = useLocation();
-  const hrefPaths = location && location.pathname.split('/');
-  const isMovie = !!(hrefPaths[1] === "movie")
-  console.log('is movie', isMovie)
+  const hrefPaths = location && location.pathname.split("/");
+  const isMovie = !!(hrefPaths[1] === "movie");
   const { id } = useParams();
   const pureIds = id && id.split("-");
-  const [RecommendList, setRecommendList] = useState([]);
+  const [CreditList, setCreditList] = useState([]);
+
   useEffect(() => {
     hrefPaths?.length > 0 && isMovie
-      ? getMovieRecommendations(pureIds[0])
+      ? getMovieCredits(pureIds[0])
           .then((response) => response.json())
-          .then((data) => setRecommendList(data))
-      : getTVRecommendations(pureIds[0])
+          .then((data) => setCreditList(data))
+      : getTVCredits(pureIds[0])
           .then((response) => response.json())
-          .then((data) => setRecommendList(data));
+          .then((data) => setCreditList(data));
   }, []);
-  
+
   return (
     <React.Fragment>
       <div className="container-fluid credits">
-        <div className="recommendations-container">
-          <div className="recommendations-container__title">
-            Recommendations
-          </div>
-          {RecommendList?.results && <RecommendationList RecommendList={RecommendList.results}/>}
+        <div className="credits-container">
+          <div className="credits-container__title">Characters</div>
+          {CreditList?.cast && (
+            <CreditListArea CreditList={CreditList.cast} />
+          )}
         </div>
       </div>
     </React.Fragment>
   );
 }
 
-export default Recommendations;
+export default Credit;

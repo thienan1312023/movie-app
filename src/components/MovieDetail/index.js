@@ -14,7 +14,7 @@ const MovieDetail = () => {
   const [urlTrailerVideo, setUrlTrailerVideo] = useState("");
   console.log("location", window.location.href);
   const hrefPaths = window.location.pathname.split("/");
-  const isMovie = hrefPaths[1] === "movie" ? true : false;
+  const isMovie = !!(hrefPaths[1] === "movie");
   const {
     OpenWatchModel: { setIsOpenWatchModal },
   } = React.useContext(MovieDetailContext);

@@ -1,6 +1,5 @@
-.recommend-item {
+.credit-item {
     position: relative;
-    display: flex;
     &__rate {
         border-style: solid;
         border-color: coral;
@@ -21,42 +20,33 @@
     border-radius: 15px;
     padding: 15px 10px 25px 10px;
     &__image > img {
-        border-radius: 20px;
-        margin-right: 25px;
+        // border-radius: 20px;
+        // height: 330px;
+        // width: 220px;
+        border-radius: 50%;
+        width: 220px;
+        height: 300px;
     }
     &__content {
-        &__overview{
-            margin-top: 10px;
-        }
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         margin-top: 20px;
         &__title {
             font-weight: 700;
             color: #000;
         }
         &__release {
-            .fa-calendar{
-                padding-right: 10px;
-            }
-            .fa-heartbeat, .fa-star, .fa-bookmark{
-                padding: 0 25px;
-                cursor: pointer;
-            }
-            &__date {
-                margin-left: 10px;
-                font-size: 1em;
-                margin: 0;
-                padding: 0;
-                color: rgba(0, 0, 0, 0.6);
-            }
+            font-size: 1em;
+            margin: 0;
+            padding: 0;
+            color: rgba(0, 0, 0, 0.6);
         }
     }
 }
 
 @media screen and (min-width: 1280px) {
-    .recommend-item {
+    .credit-item {
         padding: 15px 10px 25px 10px;
     }
 }
