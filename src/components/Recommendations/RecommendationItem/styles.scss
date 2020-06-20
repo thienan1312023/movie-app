@@ -34,10 +34,20 @@
             color: #000;
         }
         &__release {
-            font-size: 1em;
-            margin: 0;
-            padding: 0;
-            color: rgba(0, 0, 0, 0.6);
+            .fa-calendar{
+                padding-right: 10px;
+            }
+            .fa-heartbeat, .fa-star, .fa-bookmark{
+                padding: 0 25px;
+                cursor: pointer;
+            }
+            &__date {
+                margin-left: 10px;
+                font-size: 1em;
+                margin: 0;
+                padding: 0;
+                color: rgba(0, 0, 0, 0.6);
+            }
         }
     }
 }
