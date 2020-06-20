@@ -2,7 +2,7 @@
 
 import React from "react";
 import { MovieDetailContext } from "../../store/MovieDetail";
-import { Modal, Button } from "reactstrap";
+import { Modal } from "reactstrap";
 
 const ModalMovie = () => {
   const {
@@ -11,7 +11,7 @@ const ModalMovie = () => {
   } = React.useContext(MovieDetailContext);
   return (
     <div>
-      <Modal isOpen={isOpenWatchModel} toggle={() => setIsOpenWatchModal(false)}>
+      <Modal isOpen={isOpenWatchModel} toggle={() => setIsOpenWatchModal(false)} size="lg">
         <div className="embed-responsive embed-responsive-16by9">
           <iframe
             class="embed-responsive-item"
