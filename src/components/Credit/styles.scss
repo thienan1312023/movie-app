@@ -1,0 +1,24 @@
+.credits {
+    display: flex;
+    justify-content: center;
+    .credits-container {
+        &__title {
+            font-weight: 600;
+            font-size: 2.4em;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .credits {
+        .credits-container {
+            width: 1280px;
+            &__title {
+                font-weight: 600;
+                font-size: 2.4em;
+                margin-bottom: 20px;
+            }
+        }
+    }
+  }

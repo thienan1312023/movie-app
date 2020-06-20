@@ -15,7 +15,6 @@ function RecommendationItem({ RecommendItem }) {
     const { poster_path, title, release_date, overview, id } = RecommendItem;
     return (
       <div className="recommend-item">
-        <Link to={`movie/${id}-${replaceAll(title, " ", "-")}`}>
           <div className="recommend-item__main">
             <div className="recommend-item__image">
               <img src={ORG_URL + poster_path} alt="poster" />
@@ -31,19 +30,18 @@ function RecommendationItem({ RecommendItem }) {
               <i class="fa fa-heartbeat" aria-hidden="true"></i>
               <i class="fa fa-bookmark" aria-hidden="true"></i>
               <i class="fa fa-star" aria-hidden="true"></i>
+              {id}
             </div>
-            <div className="recommend-item__over">
+            <div className="recommend-item__overview">
               <span>{overview}</span>
             </div>
           </div>
-        </Link>
       </div>
     );
   } else {
     const { poster_path, name, first_air_date, overview, id } = RecommendItem;
     return (
       <div className="recommend-item">
-        <Link to={`movie/${id}-${replaceAll(name, " ", "-")}`}>
           <div className="recommend-item__main">
             <div className="recommend-item__image">
               <img src={ORG_URL + poster_path} alt="poster" />
@@ -59,12 +57,12 @@ function RecommendationItem({ RecommendItem }) {
               <i class="fa fa-heartbeat" aria-hidden="true"></i>
               <i class="fa fa-bookmark" aria-hidden="true"></i>
               <i class="fa fa-star" aria-hidden="true"></i>
+              {id}
             </div>
-            <div className="recommend-item__over">
+            <div className="recommend-item__content__overview">
               <span>{overview}</span>
             </div>
           </div>
-        </Link>
       </div>
     );
   }
