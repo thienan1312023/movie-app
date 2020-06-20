@@ -4,7 +4,6 @@ import "./styles.scss";
 const ORG_URL = "https://image.tmdb.org/t/p/w220_and_h330_face";
 
 function CreditItem({ CreditItem }) {
-
   const { profile_path, name, character } = CreditItem;
   return (
     <div className="credit-item">

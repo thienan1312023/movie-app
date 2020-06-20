@@ -1,15 +1,16 @@
 import React from "react";
-import RecommendationItem from "../RecommendationItem";
+import CreditItem from "../CreditItem";
 import "./styles.scss";
-function RecommendationList({ RecommendList }) {
+
+function CreditList({ CreditList }) {
   return (
     <React.Fragment>
-      <div className="recommendation-list-container">
+      <div className="Credit-list-container">
         <div>
-          {RecommendList &&
-            RecommendList.length > 0 &&
-            RecommendList.map((item, index) => (
-              <RecommendationItem key={index} RecommendItem={item} />
+          {CreditList &&
+            CreditList.length > 0 &&
+            CreditList.map((item, index) => (
+              <CreditItem key={index} CreditItem={item} />
             ))}
         </div>
       </div>
@@ -17,4 +18,4 @@ function RecommendationList({ RecommendList }) {
   );
 }
 
-export default RecommendationList;
+export default CreditList;
