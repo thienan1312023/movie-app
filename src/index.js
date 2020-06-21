@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'swiper/swiper.scss'
+import 'swiper/css/swiper.css'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
