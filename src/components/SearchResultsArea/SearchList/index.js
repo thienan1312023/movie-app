@@ -10,7 +10,6 @@ import './styles.scss';
 
 // eslint-disable-next-line react/prop-types
 const SearchList = ({ renderList, selectedTag }) => {
-  debugger
   const imagePersonPath = (selectedTag === 'persons') ? 'w90_and_h90_face' : 'w94_and_h141_bestv2';
   const emptyAva = (selectedTag === 'persons') ? emptyPerson : emptyLogo;
   return renderList?.results.map((mv) => (

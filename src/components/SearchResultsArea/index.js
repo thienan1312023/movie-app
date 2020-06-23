@@ -11,7 +11,7 @@ import searchAll from '../../services/search.service';
 import SearchList from './SearchList';
 import './styles.scss';
 
-const SearchPage = () => {
+const SearchResultsArea = () => {
   const { getQueryParam } = useContext(UtilsContext);
   const { state, dispatch } = useContext(SearchContext);
   const query = getQueryParam('query');
@@ -29,6 +29,7 @@ const SearchPage = () => {
   }, [query, pageNumber, dispatch]);
 
   useEffect(() => {
+    console.log('state ne', state)
     switch (filterTag) {
       case 'movie':
         setRenderList(state?.movieList);
@@ -110,4 +111,4 @@ const SearchPage = () => {
   );
 };
 
-export default SearchPage;
+export default SearchResultsArea;

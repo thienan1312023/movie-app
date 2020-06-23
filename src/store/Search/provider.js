@@ -5,6 +5,9 @@ import SearchContext from './context';
 
 const initialState = {
   movieList: [],
+  tvShowList: [],
+  collections: [],
+  persons: [],
 };
 
 const SearchProvider = ({ children }) => {
@@ -22,3 +25,4 @@ const SearchProvider = ({ children }) => {
 };
 
 export default SearchProvider;
+
