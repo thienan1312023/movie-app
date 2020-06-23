@@ -62,13 +62,13 @@ function Popular() {
             className={isActiveTV ? "select-active" : "select-disbled"}
             onClick={() => onToggle("tv")}
           >
-            On TV
+            <span className={isActiveTV ? "select-active__text" : "select-disbled_text"}>On TV</span>
           </div>
           <div
             className={!isActiveTV ? "select-active" : "select-disbled"}
             onClick={() => onToggle("theaters")}
           >
-            In Theaters
+            <span className={!isActiveTV ? "select-active__text" : "select-disbled_text"}>In Theaters</span>
           </div>
         </ButtonGroup>
       </div>

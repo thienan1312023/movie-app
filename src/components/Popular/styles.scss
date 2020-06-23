@@ -8,18 +8,24 @@
         flex-direction: column;
         border-radius: 5px;
         .select-active{
-            background-color: #90ef90;
             cursor: pointer;
             padding: 3px 10px;
             font-weight: 700;
             border-style: solid;
-            border-color: #3eb37d;
+            background-color: #062c56;
+            &__text{
+                color: white;
+            }
         }
         .select-disbled{
             cursor: pointer;
             padding: 3px 10px;
             font-weight: 700;
-            background-color: #c4c6d0;
+            border-style: groove;
+            background-color: white;
+            &__text{
+                color: #062c56;
+            }
         }
     }
 }
