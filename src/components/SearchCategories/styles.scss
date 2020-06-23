@@ -1,0 +1,61 @@
+.categoryContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 0.25;
+}
+.categoryTable {
+  margin-top: 10px;
+  border-radius: 10px;
+  margin-right: 50px;
+  &__item {
+    display: flex!important;
+    justify-content: space-between!important;
+    cursor: pointer;
+    font-size: 1em!important;
+    border-bottom: 0!important;
+    border-top: 0!important;
+    &__last {
+      display: flex!important;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    &__title {
+      font-size: 1.2em!important;
+      font-weight: bold;
+    }
+  }
+}
+
+.selected {
+  background-color: rgba(0,0,0,0.08)!important;
+  font-weight: 600;
+}
+
+.badge {
+  background-color: rgba(0,0,0,0.08)!important;
+  color: #000!important;
+  font-weight: normal!important;
+  padding: 6px 15px !important;
+  border-radius: 8px!important;
+}
+.searchTip {
+  margin-top: 20px;
+  color: #666;
+  margin-right: 50px;
+  &__icon {
+    background-image: url('https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-636-circle-info-06837a451a09552349b182d84ae84f26308efee8f7e8ddca255bd5dbc4a66ea4.svg');
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1em;
+    min-height: 1em;
+    width: 1em;
+    height: 1em;
+    line-height: inherit;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: inherit;
+    box-sizing: border-box;
+  }
+}
